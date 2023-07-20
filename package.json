@@ -10,19 +10,20 @@
     "tsc": "tsc"
   },
   "dependencies": {
+    "@expo/ngrok": "^2.5.0",
     "@gluestack-style/react": "^0.1.33",
     "expo": "^49.0.0",
+    "expo-constants": "~14.4.2",
+    "expo-font": "~11.4.0",
+    "expo-splash-screen": "~0.20.4",
     "expo-status-bar": "~1.6.0",
     "react": "18.2.0",
     "react-native": "0.72.3",
-    "react-native-svg": "13.9.0",
-    "@expo/ngrok": "^4.1.0",
-    "expo-font": "~11.4.0",
-    "expo-splash-screen": "~0.20.4",
-    "expo-constants": "~14.4.2"
+    "react-native-svg": "^13.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@expo/ngrok": "^4.1.0",
     "@gluestack-style/babel-plugin-styled-resolver": "^0.1.14",
     "@types/react": "~18.2.14",
     "typescript": "^5.1.3"

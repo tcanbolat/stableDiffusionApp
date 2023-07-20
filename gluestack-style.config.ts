@@ -1,4 +1,4 @@
-import { createConfig } from '@gluestack-style/react';
+import { createConfig } from '@gluestack-style/react'
 
 export const config = createConfig({
   aliases: {
@@ -6,7 +6,7 @@ export const config = createConfig({
     rounded: 'borderRadius',
     h: 'height',
     w: 'width',
-    ff: "fontFamily"
+    ff: "fontFamily",
   },
   tokens: {
     colors: {
@@ -69,9 +69,9 @@ export const config = createConfig({
       },
     },
   },
-} as const);
+} as const)
 
-type ConfigType = typeof config;
+type ConfigType = typeof config
 
 declare module '@gluestack-style/react' {
   interface ICustomConfig extends ConfigType {}

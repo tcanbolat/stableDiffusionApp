@@ -1,34 +1,19 @@
-import { useCallback } from 'react';
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View, Image } from 'react-native'
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
+import { StyleSheet, Text, View, Image, AppRegistry } from 'react-native'
+import * as SplashScreen from 'expo-splash-screen'
 
 import { config } from "./gluestack-style.config"
 import { StyledProvider, styled } from "@gluestack-style/react"
 
-import Logo from './assets/base/splash.png'
+import Logo from '@/base/splash.png'
+import { useFonts } from './hooks/useFonts'
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
 
-  const [fontsLoaded] = useFonts({
-    'Inter-Thin': require('./assets/fonts/Inter-Thin.otf'),
-    'Inter-Black': require('./assets/fonts/Inter-Black.otf'),
-    'Inter-Bold': require('./assets/fonts/Inter-Bold.otf'),
-    'Inter-Light': require('./assets/fonts/Inter-Light.otf'),
-  });
-
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
-    return null;
-  }
+  const { fontsLoaded, onLayoutRootView } = useFonts()
+  if (!fontsLoaded) return null
 
   const TextBox = styled(Text, {
     ff: '$black',
