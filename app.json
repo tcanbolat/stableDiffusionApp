@@ -4,15 +4,15 @@
     "slug": "stableDiffusionApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/base/icon.png",
     "userInterfaceStyle": "light",
     "experiments": {
       "tsconfigPaths": true
     },
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/base/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#ffd700"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -22,12 +22,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/base/adaptive-icon.png",
+        "backgroundColor": "#ffd700"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/base/favicon.png"
     }
   }
 }

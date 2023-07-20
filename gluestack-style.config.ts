@@ -2,11 +2,11 @@ import { createConfig } from '@gluestack-style/react';
 
 export const config = createConfig({
   aliases: {
-    bg: 'backgroundColor',
     bgColor: 'backgroundColor',
     rounded: 'borderRadius',
     h: 'height',
     w: 'width',
+    ff: "fontFamily"
   },
   tokens: {
     colors: {
@@ -38,6 +38,12 @@ export const config = createConfig({
     fontSizes: {
       sm: 14,
       md: 16,
+    },
+    fonts: {
+      thin: 'Inter-Thin',
+      black: 'Inter-Black',
+      bold: 'Inter-Bold',
+      light: 'Inter-Light',
     },
     mediaQueries: {
       sm: '@media (min-width: 480px)',
