@@ -2,6 +2,7 @@
   "expo": {
     "name": "stableDiffusionApp",
     "slug": "stableDiffusionApp",
+    "scheme": "stableDiffusionApp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/base/icon.png",
@@ -27,7 +28,11 @@
       }
     },
     "web": {
-      "favicon": "./assets/base/favicon.png"
-    }
+      "favicon": "./assets/base/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
