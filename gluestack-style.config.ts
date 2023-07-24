@@ -7,6 +7,8 @@ export const config = createConfig({
     h: 'height',
     w: 'width',
     ff: "fontFamily",
+    bw: 'borderWidth',
+    bc: 'borderColor',
   },
   tokens: {
     colors: {
@@ -19,6 +21,7 @@ export const config = createConfig({
       4: 16,
       5: 20,
       6: 24,
+      8: 48
     },
     radii: {
       sm: 4,
