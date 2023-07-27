@@ -11,5 +11,3 @@
 // if (Platform.OS !== 'web') {
 //   registerRootComponent(App)
 // }
-
-

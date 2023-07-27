@@ -6,19 +6,7 @@ const StackLayout = () => {
   const router = useRouter()
 
   return (
-    <Stack
-      screenOptions={{
-        headerStyle:
-        {
-          backgroundColor: '#10101E',
-        },
-        headerTitleStyle:
-        {
-          fontWeight: 'bold',
-        },
-        headerTintColor: '#fff',
-      }}
-    >
+    <Stack>
       <Stack.Screen
         name='index'
         options={

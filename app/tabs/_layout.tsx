@@ -10,7 +10,8 @@ export default () => {
           {
             tabBarLabel: 'one',
             headerTitle: 'Tab one',
-            tabBarIcon: ({ color, size }) => <FontAwesome5 name='user' size={size} color={color} />
+            tabBarIcon: ({ color, size }: { color: string, size: number }) =>
+              <FontAwesome5 name='user' size={size} color={color} />
           }
         }
       />
@@ -20,7 +21,8 @@ export default () => {
           {
             tabBarLabel: 'two',
             headerTitle: 'Tab two',
-            tabBarIcon: ({ color, size }) => <FontAwesome5 name='list' size={size} color={color} />
+            tabBarIcon: ({ color, size }: { color: string, size: number }) =>
+              <FontAwesome5 name='list' size={size} color={color} />
           }
         }
       />
@@ -30,8 +32,9 @@ export default () => {
           {
             tabBarLabel: 'News',
             headerShown: false,
-            // href: null, // Hides the Tab from the bottm Tab Bar
-            tabBarIcon: ({ color, size }) => <FontAwesome5 name='newspaper' size={size} color={color} />
+            // href: null, // Hides the Tab from the bottom Tab Bar
+            tabBarIcon: ({ color, size }: { color: string, size: number }) =>
+              <FontAwesome5 name='newspaper' size={size} color={color} />
           }
         }
       />

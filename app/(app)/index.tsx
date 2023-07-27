@@ -3,14 +3,10 @@ import { StyleSheet, Text, View, Image, Pressable } from 'react-native'
 import * as SplashScreen from 'expo-splash-screen'
 import { Link, useRouter } from 'expo-router';
 
-import { config } from "../../gluestack-style.config"
-import { StyledProvider, styled } from "@gluestack-style/react"
+import { styled } from "@gluestack-style/react"
 
 import Logo from '@/base/splash.png'
 import { useFonts } from '../../hooks/useFonts'
-
-import store from '$/store'
-import { Provider } from 'react-redux'
 
 SplashScreen.preventAutoHideAsync();
 
@@ -34,14 +30,20 @@ export default function App() {
   const handlePress = () => {
     router.replace('tabs')
   }
+  const handleCounterPress = () => {
+    router.push('counter')
+  }
 
   return (
-    <Provider store={store}>
-      <StyledProvider config={config}>
         <View style={styles.container} onLayout={onLayoutRootView}>
           <Pressable onPress={handlePress}>
             <TextBox>
               Tabs Screen
+            </TextBox>
+          </Pressable>
+          <Pressable onPress={handleCounterPress}>
+            <TextBox>
+              Counter Screen
             </TextBox>
           </Pressable>
           <Image style={styles.image} source={Logo} />
@@ -54,9 +56,6 @@ export default function App() {
           </Link>
           <StatusBar style="auto" />
         </View>
-      </StyledProvider>
-    </Provider>
-
   )
 }
 
