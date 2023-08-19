@@ -8,7 +8,7 @@ import { styled } from "@gluestack-style/react"
 import { useEffect, useState } from 'react'
 
 export default function TabOne() {
-  const [requestData, setrequestData] = useState({})
+  const [requestData, setrequestData] = useState({hello: ''})
 
   const router = useRouter()
 
@@ -64,7 +64,7 @@ export default function TabOne() {
             </TextBox>
           </Pressable>
           <TextBox>
-            {requestData.hello}
+            {`${requestData.hello}`}
           </TextBox>
           <StatusBar style="auto" />
         </View>

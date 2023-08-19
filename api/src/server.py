@@ -21,7 +21,7 @@ DB_CONFIG = {
 def init_app():
     """Initialise Sanic app."""
     logger.debug("Initialising Sanic..")
-    app = Sanic(name="backend-api")
+    app = Sanic("ai-video-api")
     logger.debug("Adding CORS..")
     CORS(app, automatic_options=True)
     logger.debug("Setting up routes..")
@@ -31,28 +31,29 @@ def init_app():
 
     @app.listener("before_server_start")
     async def register_db(app, loop):
-        app.pool = await create_pool(**DB_CONFIG, loop=loop, max_size=100)
-        async with app.pool.acquire() as connection:
+        pool = await create_pool(**DB_CONFIG, loop=loop, max_size=100)
+        async with pool.acquire() as connection:
             await connection.execute("DROP TABLE IF EXISTS sanic_post")
             await connection.execute(
                 """CREATE TABLE sanic_post (
-                                    id serial primary key,
-                                    content varchar(64),
-                                    post_date timestamp
-                                );"""
+                    id serial primary key,
+                    content varchar(64),
+                    post_date timestamp
+                );"""
             )
             for i in range(0, 5):
                 content = f"Hello from Sanic - {i}"
                 await connection.execute(
                     f"""INSERT INTO sanic_post(id, content, post_date)
-                VALUES ({i}, '{content}', now())"""
+                    VALUES ({i}, '{content}', now())"""
                 )
+        app.ctx.pool = pool
 
     return app
 
+app = init_app()
 
 if __name__ == "__main__":
-    app = init_app()
     app.run(
         host="0.0.0.0",
         port=int(os.getenv("PORT", 8000)),

@@ -8,14 +8,13 @@ COPY package.json ./
 
 RUN set -ex; \
   if [ "$NODE_ENV" = "production" ]; then \
-    npm install --no-cache --frozen-lockfile --production; \
+    npm install --no-cache  --production; \
   else \
-    npm install --no-cache --frozen-lockfile; \
+    npm install --no-cache; \
   fi;
 
 COPY . /srv/app
 
 EXPOSE 3000
-EXPOSE 35729
 
-CMD ["npx", "expo", "start", "-c"]
+CMD ["npx", "expo", "start", "-c", "--port", "3000"]

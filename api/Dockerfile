@@ -5,7 +5,7 @@ ENV APP_HOME /srv/app
 WORKDIR $APP_HOME
 
 # Install production dependencies.
-RUN pip install -U pip==20.1.1 setuptools==47.1.1 poetry==1.0.5
+RUN pip install -U pip==23.2.1 setuptools==68.1.2 poetry==1.5.1
 COPY pyproject.toml pyproject.toml
 COPY poetry.lock poetry.lock
 

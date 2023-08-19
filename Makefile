@@ -11,11 +11,11 @@ backend_bash: build
 	docker-compose run --rm backend /bin/bash
 
 frontend_bash: build
-	docker-compose run --rm frontend /bin/bash
+	docker-compose run --rm frontend
 
 test: build
 	docker-compose run backend python -m pytest ./tests
-	docker-compose run frontend yarn test --watchAll=false
+	docker-compose run frontend npm test --watchAll=false
 
 lint:
 	docker-compose run backend isort --recursive .

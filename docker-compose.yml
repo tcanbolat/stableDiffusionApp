@@ -28,20 +28,19 @@ services:
         condition: service_healthy
     networks:
       - backend
-      # - frontend
-  # frontend:
-  #   build:
-  #     context: ./client
-  #     args:
-  #       NODE_ENV: "development"
-  #   volumes:
-  #     - ./client:/srv/app
-  #   ports:
-  #     - "3000:3000"
-  #     - "35729:35729"
-  #   networks:
-  #     - frontend
+      - frontend
+  frontend:
+    build:
+      context: ./client
+      args:
+        NODE_ENV: "development"
+    volumes:
+      - ./client:/srv/app
+    ports:
+      - "3000:3000"
+    networks:
+      - frontend
 
 networks:
   backend:
-  # frontend:
+  frontend:
